@@ -26,10 +26,6 @@ A simple and modern notes-taking web app built with **React + Vite + Tailwind CS
 
 ---
 
-## 📸 Preview
-
-(Add screenshot here later if you want)
-
 ---
 
 ## 📂 Project Setup
