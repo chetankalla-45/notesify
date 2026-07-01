@@ -9,6 +9,16 @@ function App() {
   const [detail, setDetail] = useState("")
 
   const [task, setTask] = useState([])
+
+
+  const [task, setTask] = useState(() => {
+    const savedTasks = localStorage.getItem("task");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+  
+  useEffect(() => {
+    localStorage.setItem("task", JSON.stringify(task));
+  }, [task]);
   
   const submitHandler = (e) => {
     e.preventDefault()
