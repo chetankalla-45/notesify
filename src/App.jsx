@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -8,9 +8,7 @@ function App() {
   const [title, setTitle] = useState("")
   const [detail, setDetail] = useState("")
 
-  const [task, setTask] = useState([])
-
-
+  // const [task, setTask] = useState([])
   const [task, setTask] = useState(() => {
     const savedTasks = localStorage.getItem("task");
     return savedTasks ? JSON.parse(savedTasks) : [];
@@ -19,7 +17,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("task", JSON.stringify(task));
   }, [task]);
-  
+
   const submitHandler = (e) => {
     e.preventDefault()
     const copyTask = [...task]
